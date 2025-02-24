@@ -11,6 +11,7 @@ class ViewServiceProvider extends ServiceProvider
     public function boot()
     {
         // Share ethnic groups with all views
+        // category default by ethnic graoup
         View::composer('*', function ($view) {
             $ethnicGroups = EthnicGroup::all();
             $view->with('ethnicGroups', $ethnicGroups);
